@@ -132,7 +132,7 @@ const Contact = () => {
             viewport={{ once: true }}
             className="space-y-6"
           >
-            <Card className="p-8 shadow-accent hover:shadow-glow transition-all duration-300">
+            <Card className="p-8 shadow-accent hover:shadow-glow transition-all duration-300 backdrop-blur-sm bg-card/80">
               <h3 className="text-2xl font-bold mb-6">Centres d'intérêt</h3>
               <div className="grid grid-cols-2 gap-3">
                 {interests.map((interest, index) => (
@@ -142,9 +142,10 @@ const Contact = () => {
                     whileInView={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.3, delay: index * 0.05 }}
                     viewport={{ once: true }}
-                    className="bg-gradient-glow p-4 rounded-lg text-center hover:shadow-md transition-all hover:scale-105"
+                    className="relative group p-4 rounded-lg text-center transition-all duration-300 hover:scale-110 bg-gradient-to-br from-primary/10 via-accent/10 to-secondary/10 backdrop-blur-sm border border-primary/20 hover:border-accent/40 hover:shadow-lg hover:shadow-accent/20"
                   >
-                    <span className="text-lg font-medium">{interest}</span>
+                    <span className="text-lg font-medium relative z-10">{interest}</span>
+                    <div className="absolute inset-0 rounded-lg bg-gradient-to-br from-primary/0 to-accent/0 group-hover:from-primary/20 group-hover:to-accent/20 transition-all duration-300" />
                   </motion.div>
                 ))}
               </div>
@@ -168,21 +169,9 @@ const Contact = () => {
                 </a>
               </Button>
             </Card>
-          </motion.div>
-        </div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="text-center"
-        >
-          <p className="text-muted-foreground">
-            Responsable étudiant au bureau des élèves • Co-fondatrice d'une association de musique électronique et de mix
-          </p>
         </motion.div>
       </div>
+    </div>
     </section>
   );
 };

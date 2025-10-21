@@ -14,13 +14,13 @@ const skillsData = [
     title: "Intelligence Artificielle",
     icon: Brain,
     color: "text-secondary",
-    skills: ["Machine Learning", "Deep Learning", "Traitement d'image", "Computer Vision"]
+    skills: ["Machine Learning", "Deep Learning", "Reinforcement Learning", "Traitement d'image", "Computer Vision"]
   },
   {
     title: "Game Development",
     icon: Gamepad2,
     color: "text-accent",
-    skills: ["Unity 3D", "Game Design", "Réalité Virtuelle", "Réalité Augmentée", "Flutter"]
+    skills: ["Unity 3D", "Réalité Virtuelle", "Réalité Augmentée"]
   },
   {
     title: "Langues",
@@ -67,21 +67,24 @@ const Skills = () => {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
             >
-              <Card className="p-6 h-full hover:shadow-primary transition-all duration-300 hover:scale-105">
-                <div className="flex items-center gap-3 mb-4">
-                  <category.icon className={`h-8 w-8 ${category.color}`} />
-                  <h3 className="text-2xl font-bold">{category.title}</h3>
-                </div>
-                <div className="flex flex-wrap gap-2">
-                  {category.skills.map((skill) => (
-                    <Badge 
-                      key={skill} 
-                      variant="secondary"
-                      className="text-sm hover:bg-primary hover:text-primary-foreground transition-colors duration-200"
-                    >
-                      {skill}
-                    </Badge>
-                  ))}
+              <Card className="p-6 h-full hover:shadow-primary transition-all duration-300 hover:scale-105 backdrop-blur-md bg-card/60 border border-primary/20 relative overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-accent/5" />
+                <div className="relative z-10">
+                  <div className="flex items-center gap-3 mb-4">
+                    <category.icon className={`h-8 w-8 ${category.color}`} />
+                    <h3 className="text-2xl font-bold">{category.title}</h3>
+                  </div>
+                  <div className="flex flex-wrap gap-2">
+                    {category.skills.map((skill) => (
+                      <Badge 
+                        key={skill} 
+                        variant="secondary"
+                        className="text-sm hover:bg-primary hover:text-primary-foreground transition-colors duration-200 backdrop-blur-sm"
+                      >
+                        {skill}
+                      </Badge>
+                    ))}
+                  </div>
                 </div>
               </Card>
             </motion.div>
@@ -94,7 +97,7 @@ const Skills = () => {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <Card className="p-8 bg-gradient-glow">
+          <Card className="p-8 bg-gradient-glow backdrop-blur-md bg-card/60 border border-accent/20">
             <h3 className="text-2xl font-bold mb-6 text-center">Soft Skills</h3>
             <div className="flex flex-wrap gap-3 justify-center">
               {softSkills.map((skill, index) => (
@@ -107,7 +110,7 @@ const Skills = () => {
                 >
                   <Badge 
                     variant="outline"
-                    className="text-base py-2 px-4 hover:bg-accent hover:text-accent-foreground transition-all duration-200 hover:scale-110"
+                    className="text-base py-2 px-4 transition-all duration-300 hover:scale-110 hover:shadow-lg bg-background/50 backdrop-blur-sm hover:bg-gradient-to-r hover:from-accent/80 hover:via-primary/60 hover:to-secondary/80 hover:text-white hover:border-transparent"
                   >
                     {skill}
                   </Badge>
