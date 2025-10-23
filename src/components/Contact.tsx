@@ -31,13 +31,13 @@ const socialLinks = [
   {
     icon: Linkedin,
     label: "LinkedIn",
-    link: "https://linkedin.com",
+    link: "https://www.linkedin.com/in/noémie-pernin-a96408222",
     color: "hover:bg-secondary hover:text-secondary-foreground"
   },
   {
     icon: Github,
     label: "GitHub",
-    link: "https://github.com",
+    link: "https://github.com/nopernin",
     color: "hover:bg-foreground hover:text-background"
   }
 ];

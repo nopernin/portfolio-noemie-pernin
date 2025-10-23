@@ -71,8 +71,14 @@ const Projects = () => {
   const [selectedProject, setSelectedProject] = useState<typeof projects[0] | null>(null);
   const [dialogOpen, setDialogOpen] = useState(false);
 
+  const [current, setCurrent] = useState(0);
+
   useEffect(() => {
     if (!api) return;
+    
+    api.on('select', () => {
+      setCurrent(api.selectedScrollSnap());
+    });
   }, [api]);
 
   const handleProjectClick = (project: typeof projects[0]) => {
@@ -112,50 +118,76 @@ const Projects = () => {
           className="w-full"
         >
           <CarouselContent className="-ml-2 md:-ml-4">
-            {projects.map((project, index) => (
-              <CarouselItem key={project.title} className="pl-2 md:pl-4 basis-full md:basis-1/3 lg:basis-1/5">
-                <motion.div
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                  className="h-full"
-                >
-                  <Card 
-                    className={`h-full flex flex-col hover:shadow-glow transition-all duration-300 hover:scale-105 cursor-pointer backdrop-blur-sm bg-card/90 ${
-                      project.highlight ? 'border-2 border-primary shadow-primary' : ''
-                    }`}
-                    onClick={() => handleProjectClick(project)}
+            {projects.map((project, index) => {
+              const distance = Math.abs(index - current);
+              const isCenter = distance === 0;
+              const isNearCenter = distance === 1;
+              const isFarEdge = distance >= 2;
+              
+              let scale = 0.7;
+              let opacity = 0.5;
+              
+              if (isCenter) {
+                scale = 1;
+                opacity = 1;
+              } else if (isNearCenter) {
+                scale = 0.85;
+                opacity = 0.8;
+              } else if (isFarEdge) {
+                scale = 0.7;
+                opacity = 0.6;
+              }
+              
+              return (
+                <CarouselItem key={project.title} className="pl-2 md:pl-4 basis-full md:basis-1/3 lg:basis-1/5">
+                  <motion.div
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: index * 0.1 }}
+                    viewport={{ once: true }}
+                    className="h-full flex items-center justify-center"
+                    style={{
+                      transform: `scale(${scale})`,
+                      opacity: opacity,
+                      transition: 'all 0.3s ease-in-out'
+                    }}
                   >
-                    {project.image && (
-                      <div className="relative h-48 overflow-hidden rounded-t-lg">
-                        <img 
-                          src={project.image} 
-                          alt={project.title}
-                          className="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-t from-card/80 to-transparent" />
-                      </div>
-                    )}
-                    
-                    <CardHeader className={!project.image ? 'pt-6' : ''}>
-                      <CardTitle className="text-lg line-clamp-2">{project.title}</CardTitle>
-                      <CardDescription className="text-sm line-clamp-3">{project.description}</CardDescription>
-                    </CardHeader>
+                    <Card 
+                      className={`h-full flex flex-col hover:shadow-glow transition-all duration-300 hover:scale-105 cursor-pointer backdrop-blur-sm bg-card/90 ${
+                        project.highlight ? 'border-2 border-primary shadow-primary' : ''
+                      }`}
+                      onClick={() => handleProjectClick(project)}
+                    >
+                      {project.image && (
+                        <div className="relative h-48 overflow-hidden rounded-t-lg">
+                          <img 
+                            src={project.image} 
+                            alt={project.title}
+                            className="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-t from-card/80 to-transparent" />
+                        </div>
+                      )}
+                      
+                      <CardHeader className={!project.image ? 'pt-6' : ''}>
+                        <CardTitle className="text-lg line-clamp-2">{project.title}</CardTitle>
+                        <CardDescription className="text-sm line-clamp-3">{project.description}</CardDescription>
+                      </CardHeader>
 
-                    <CardContent className="flex-grow">
-                      <div className="flex flex-wrap gap-2">
-                        {project.tags.slice(0, 3).map((tag) => (
-                          <Badge key={tag} variant="secondary" className="text-xs">
-                            {tag}
-                          </Badge>
-                        ))}
-                      </div>
-                    </CardContent>
-                  </Card>
-                </motion.div>
-              </CarouselItem>
-            ))}
+                      <CardContent className="flex-grow">
+                        <div className="flex flex-wrap gap-2">
+                          {project.tags.slice(0, 3).map((tag) => (
+                            <Badge key={tag} variant="secondary" className="text-xs">
+                              {tag}
+                            </Badge>
+                          ))}
+                        </div>
+                      </CardContent>
+                    </Card>
+                  </motion.div>
+                </CarouselItem>
+              );
+            })}
           </CarouselContent>
           <div className="flex justify-center gap-4 mt-8">
             <CarouselPrevious className="relative static translate-y-0" />

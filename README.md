@@ -1,73 +1,186 @@
-# Welcome to your Lovable project
+# Portfolio de Noémie Pernin
 
-## Project info
+Portfolio professionnel axé jeux vidéo avec animations 3D et design moderne.
 
-**URL**: https://lovable.dev/projects/759a9f77-6703-4df6-bcf5-38ca37c05283
+**URL du projet**: https://lovable.dev/projects/759a9f77-6703-4df6-bcf5-38ca37c05283
 
-## How can I edit this code?
+---
 
-There are several ways of editing your application.
+## 🎨 Comment personnaliser votre portfolio
 
-**Use Lovable**
+### 📝 Modifier les textes
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/759a9f77-6703-4df6-bcf5-38ca37c05283) and start prompting.
+#### Section Hero (page d'accueil)
+Fichier : `src/components/Hero.tsx`
+```tsx
+<h1>Noémie Pernin</h1>  // Changez votre nom
+<p>Développeuse & Game Developer</p>  // Changez votre titre
+<p>Étudiante ingénieure...</p>  // Changez votre description
+```
 
-Changes made via Lovable will be committed automatically to this repo.
+#### Section À propos
+Fichier : `src/components/About.tsx`
+```tsx
+// Modifiez les paragraphes dans les deux cards
+<p>Étudiante en dernière année...</p>
+<p>Passionnée par les jeux vidéo...</p>
+<p>J'ai eu la chance d'effectuer...</p>
+```
 
-**Use your preferred IDE**
+#### Section Compétences
+Fichier : `src/components/Skills.tsx`
+```tsx
+const skills = [
+  {
+    category: "Nom de la catégorie",
+    items: ["Compétence 1", "Compétence 2", ...]
+  }
+];
+```
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+---
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+### 🎮 Modifier les projets
 
-Follow these steps:
+Fichier : `src/components/Projects.tsx`
+
+#### Ajouter/Modifier un projet
+```tsx
+const projects = [
+  {
+    title: "Titre du projet",
+    description: "Description courte (affichée sur la card)",
+    detailedDescription: "Description longue et détaillée pour la popup.\n\nVous pouvez faire des paragraphes.",
+    image: nomDeLImage,  // ou null si pas d'image
+    tags: ["Unity", "C#", "3D"],
+    videoUrl: "LIEN_YOUTUBE_OU_AUTRE",  // Laissez "" si pas de vidéo
+    githubLink: "https://github.com/votre-repo",
+    highlight: true  // Pour mettre en avant le projet (bordure spéciale)
+  }
+];
+```
+
+#### Ajouter une image de projet
+1. Placez votre image dans le dossier `src/assets/`
+2. Importez-la en haut du fichier :
+```tsx
+import monImage from "@/assets/mon-image.jpg";
+```
+3. Utilisez-la dans votre projet :
+```tsx
+image: monImage,
+```
+
+#### Ajouter une vidéo
+Dans la popup, la vidéo sera affichée automatiquement si vous ajoutez un lien YouTube :
+```tsx
+videoUrl: "https://www.youtube.com/watch?v=VOTRE_ID",
+```
+
+**Formats de vidéo supportés** :
+- YouTube : `https://www.youtube.com/watch?v=ID` ou `https://youtu.be/ID`
+- Autre : ajoutez le lien direct vers votre vidéo
+
+#### Supprimer un projet
+Supprimez simplement l'objet correspondant du tableau `projects`.
+
+#### Réorganiser les projets
+Changez l'ordre des objets dans le tableau `projects`. Le premier projet sera affiché en premier dans le carousel.
+
+---
+
+### 📧 Modifier les liens de contact
+
+Fichier : `src/components/Contact.tsx`
+
+```tsx
+// GitHub
+href="https://github.com/votre-username"
+
+// LinkedIn
+href="https://www.linkedin.com/in/votre-profil"
+
+// Email
+href="mailto:votre.email@example.com"
+```
+
+---
+
+### 🎯 Modifier les centres d'intérêt
+
+Fichier : `src/components/Contact.tsx`
+```tsx
+const interests = [
+  { icon: Gamepad2, label: "Jeux Vidéo" },
+  { icon: Music, label: "Musique Électronique" },
+  // Ajoutez vos centres d'intérêt ici
+];
+```
+
+**Icônes disponibles** : Consultez [Lucide Icons](https://lucide.dev/icons/) et importez-les :
+```tsx
+import { NomIcon } from "lucide-react";
+```
+
+---
+
+### 🎨 Changer les couleurs
+
+Fichier : `src/index.css`
+
+Modifiez les variables de couleurs en format HSL :
+```css
+:root {
+  --primary: 262 83% 58%;        /* Violet principal */
+  --secondary: 185 62% 45%;      /* Cyan */
+  --accent: 328 86% 70%;         /* Rose */
+}
+```
+
+[Convertisseur HSL](https://www.colorhexa.com/) pour trouver vos couleurs.
+
+---
+
+## 🚀 Déployer sur GitHub Pages
+
+1. **Connecter GitHub** : Cliquez sur le bouton GitHub en haut à droite de Lovable
+2. **Publier** : Cliquez sur "Publish" en haut à droite
+3. **GitHub Pages** :
+   - Allez dans Settings > Pages de votre repo GitHub
+   - Source : Deploy from a branch
+   - Branch : `main` / `root`
+   - Sauvegardez
+
+Votre site sera disponible à : `https://votre-username.github.io/nom-du-repo`
+
+---
+
+## 💻 Développement local
 
 ```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+# Cloner le projet
+git clone <VOTRE_URL_GIT>
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+# Installer les dépendances
+npm install
 
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Lancer en local
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+---
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## 🛠️ Technologies utilisées
 
-**Use GitHub Codespaces**
+- **React** + **TypeScript**
+- **Vite** (build tool)
+- **Tailwind CSS** (styling)
+- **Framer Motion** (animations)
+- **Three.js** (éléments 3D)
+- **shadcn/ui** (composants UI)
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+---
 
-## What technologies are used for this project?
+## 📱 Support
 
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/759a9f77-6703-4df6-bcf5-38ca37c05283) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+Pour toute question, consultez la [documentation Lovable](https://docs.lovable.dev/) ou rejoignez le [Discord Lovable](https://discord.com/channels/1119885301872070706/1280461670979993613).
