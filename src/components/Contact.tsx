@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Mail, Phone, MapPin, Linkedin, Github } from "lucide-react";
+import { Mail, Phone, MapPin, Linkedin, Github, FileDown } from "lucide-react";
 
 const contactInfo = [
   {
@@ -157,17 +157,30 @@ const Contact = () => {
                 Je recherche un <strong>stage de 5 à 6 mois</strong> à partir du <strong>1er avril 2025</strong> dans 
                 les domaines du <strong>jeu vidéo</strong>, du <strong>développement logiciel</strong> ou de l'<strong>intelligence artificielle</strong>.
               </p>
-              <Button 
-                size="lg" 
-                variant="secondary"
-                className="mt-6 w-full bg-white/20 hover:bg-white/30 text-white border-white/30 transition-all hover:scale-105"
-                asChild
-              >
-                <a href="mailto:noemie.pernin@esme.fr">
-                  <Mail className="h-5 w-5 mr-2" />
-                  Me contacter
-                </a>
-              </Button>
+              <div className="flex gap-3 mt-6">
+                <Button 
+                  size="lg" 
+                  variant="secondary"
+                  className="flex-1 bg-white/20 hover:bg-white/30 text-white border-white/30 transition-all hover:scale-105"
+                  asChild
+                >
+                  <a href="mailto:noemie.pernin@esme.fr">
+                    <Mail className="h-5 w-5 mr-2" />
+                    Me contacter
+                  </a>
+                </Button>
+                <Button 
+                  size="lg" 
+                  variant="secondary"
+                  className="flex-1 bg-white/20 hover:bg-white/30 text-white border-white/30 transition-all hover:scale-105"
+                  asChild
+                >
+                  <a href="/CV_Noemie_PERNIN.pdf" download>
+                    <FileDown className="h-5 w-5 mr-2" />
+                    Télécharger CV
+                  </a>
+                </Button>
+              </div>
             </Card>
         </motion.div>
       </div>
