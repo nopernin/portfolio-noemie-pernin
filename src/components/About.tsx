@@ -30,14 +30,13 @@ const About = () => {
             viewport={{ once: true }}
             className="flex justify-center"
           >
-            <div className="relative">
-              <div className="absolute inset-0 bg-gradient-primary blur-3xl opacity-40 animate-glow-pulse" />
+            <Card className="p-8 bg-background shadow-glow">
               <img 
                 src={profileCutout} 
                 alt="Noémie Pernin" 
-                className="relative w-80 h-auto object-contain drop-shadow-2xl rounded-3xl"
+                className="w-80 h-auto object-contain rounded-2xl"
               />
-            </div>
+            </Card>
           </motion.div>
 
           {/* Cards */}
