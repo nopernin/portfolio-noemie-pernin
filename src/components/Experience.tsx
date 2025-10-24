@@ -5,7 +5,7 @@ import { Briefcase, GraduationCap } from "lucide-react";
 const experiences = [
   {
     type: "work",
-    title: "Développeuse Full-Stack - Stage",
+    title: "Développeuse application web Full-Stack - Stage",
     company: "Pixelisium",
     period: "Été 2025",
     description: "Développement seule et complet d'une plateforme e-learning modulaire avec React, Next.js, TypeScript et Supabase, incluant base de données sécurisée.",
@@ -14,9 +14,17 @@ const experiences = [
   {
     type: "work",
     title: "Assistante Services Scolarité - Stage",
-    company: "ESME Sudria",
+    company: "INSPE",
     period: "Été 2024",
     description: "Inscription des étudiants, contrôle des erreurs, réalisation des cartes étudiantes.",
+    tags: ["Organisation", "Rigueur"]
+  },
+  {
+    type: "work",
+    title: "Assistanat au service approvisionnements et logistique - Stage",
+    company: "Binder Magnetic",
+    period: "Été 2023",
+    description: "Enregistrement des factures, réceptions de marchandises et mise à jour de la base de données",
     tags: ["Organisation", "Rigueur"]
   }
 ];
