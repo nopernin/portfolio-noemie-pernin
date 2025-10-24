@@ -2,11 +2,11 @@
 
 Portfolio professionnel axé jeux vidéo avec animations 3D et design moderne.
 
-**URL du projet**: https://lovable.dev/projects/759a9f77-6703-4df6-bcf5-38ca37c05283
+**URL du projet**: https://nopernin.github.io/portfolio-noemie-pernin/
 
 ---
 
-## 🎨 Comment personnaliser votre portfolio
+## 🎨 Comment personnaliser mon portfolio
 
 ### 📝 Modifier les textes
 
@@ -141,34 +141,6 @@ Modifiez les variables de couleurs en format HSL :
 
 ---
 
-## 🚀 Déployer sur GitHub Pages
-
-1. **Connecter GitHub** : Cliquez sur le bouton GitHub en haut à droite de Lovable
-2. **Publier** : Cliquez sur "Publish" en haut à droite
-3. **GitHub Pages** :
-   - Allez dans Settings > Pages de votre repo GitHub
-   - Source : Deploy from a branch
-   - Branch : `main` / `root`
-   - Sauvegardez
-
-Votre site sera disponible à : `https://votre-username.github.io/nom-du-repo`
-
----
-
-## 💻 Développement local
-
-```sh
-# Cloner le projet
-git clone <VOTRE_URL_GIT>
-
-# Installer les dépendances
-npm install
-
-# Lancer en local
-npm run dev
-```
-
----
 
 ## 🛠️ Technologies utilisées
 
@@ -179,8 +151,3 @@ npm run dev
 - **Three.js** (éléments 3D)
 - **shadcn/ui** (composants UI)
 
----
-
-## 📱 Support
-
-Pour toute question, consultez la [documentation Lovable](https://docs.lovable.dev/) ou rejoignez le [Discord Lovable](https://discord.com/channels/1119885301872070706/1280461670979993613).
