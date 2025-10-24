@@ -52,11 +52,11 @@ const About = () => {
               <h3 className="text-2xl font-bold mb-4 text-primary">Qui suis-je ?</h3>
               <p className="text-muted-foreground leading-relaxed mb-4">
                 Étudiante en dernière année à l'<strong>ESME Sudria</strong> (3ème au classement 2025 des écoles d'ingénieurs généralistes post-bac), 
-                je suis spécialisée en <strong>Intelligence Artificielle</strong> avec un parcours centré sur l'innovation et l'international.
+                je suis spécialisée en <strong>Intelligence Artificielle</strong> avec un parcours centré sur l'innovation et la programmation.
               </p>
               <p className="text-muted-foreground leading-relaxed">
-                Passionnée par les <strong>jeux vidéo</strong> et les nouvelles technologies, j'aime concevoir et explorer des solutions innovantes 
-                à travers le développement. Curieuse et motivée, je cherche à allier <strong>créativité</strong> et <strong>technique</strong> dans mes projets.
+                Passionnée par les <strong>jeux vidéo</strong> et le développement (site internet, application web et mobiles...), j'aime concevoir et explorer des solutions innovantes 
+                en faisant jouer ma créativité. Curieuse et motivée, je cherche à allier <strong>créativité</strong> et <strong>technique</strong> dans mes projets.
               </p>
             </Card>
 
