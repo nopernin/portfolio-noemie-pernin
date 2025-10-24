@@ -62,7 +62,7 @@ const Hero = () => {
         }} transition={{
           delay: 0.6
         }}>
-            Étudiante ingénieure à l'ESME Sudria, spécialisée en IA et développement de jeux vidéo Unity
+            Étudiante ingénieure en dernière année à l'ESME Sudria, spécialisée en IA et passionnée développement de jeux vidéo
           </motion.p>
 
           <motion.div className="flex gap-4 justify-center items-center flex-wrap" initial={{
