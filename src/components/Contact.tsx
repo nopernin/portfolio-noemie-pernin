@@ -43,12 +43,12 @@ const socialLinks = [
 ];
 
 const interests = [
-  "🎮 Jeux vidéo",
-  "🐴 Équitation",
-  "🎹 Piano",
-  "🏃‍♀️ Course à pied",
-  "🎬 Cinéma",
-  "🎵 Musique électronique & Mix"
+  "Jeux vidéo",
+  "Équitation",
+  "Piano",
+  "Course à pied",
+  "Cinéma",
+  "Musique électronique & Mix"
 ];
 
 const Contact = () => {
@@ -154,8 +154,8 @@ const Contact = () => {
             <Card className="p-8 bg-gradient-primary text-primary-foreground">
               <h3 className="text-2xl font-bold mb-4">💼 Disponibilité</h3>
               <p className="text-lg leading-relaxed">
-                Je recherche un <strong>stage de 5 à 6 mois</strong> à partir du <strong>1er avril 2025</strong> dans 
-                les domaines du <strong>jeu vidéo</strong>, du <strong>développement logiciel</strong> ou de l'<strong>intelligence artificielle</strong>.
+                Je recherche un <strong>stage de 6 mois</strong> à partir du <strong>1er avril 2025</strong> dans 
+                les domaines du <strong>jeu vidéo</strong>, du <strong>développement </strong> ou de l'<strong>intelligence artificielle</strong>.
               </p>
               <div className="flex gap-3 mt-6">
                 <Button 
