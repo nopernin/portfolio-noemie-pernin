@@ -12,13 +12,27 @@ import DinnerImg from "@/assets/Dinner.png";
 import DinnerVdo from "@/assets/Dinner.mp4";
 import SkillsUpImg from "@/assets/SkillsUp.png";
 import SkillsUpVdo from "@/assets/SkillsUp2.mp4";
-
-
+import DashboardImg from "@/assets/dashboard.png";
+import DashboardVdo from "@/assets/dashboard.gif";
+import AlzheimerImg from "@/assets/alzheimer.png";
+import AlzheimerVdo from "@/assets/alzheimer.mp4";
+import ChefImg from "@/assets/MiniChef.png";
 
 
 import ProjectDialog from "./ProjectDialog";
 
-const projects = [
+interface Project {
+  title: string;
+  description: string;
+  detailedDescription: string;
+  image: string | null;
+  tags: string[];
+  videoUrl: string;
+  githubLink: string;
+  highlight?: boolean;
+}
+
+const projects: Project[] = [
   {
     title: "Flappy Bird Unity",
     description: "Recréation du jeu Flappy Bird pour comprendre la gestion de la physique, des collisions et du scoring dans Unity",
@@ -64,29 +78,29 @@ const projects = [
     githubLink: "#",
   },
   {
-    title: "Dashboard Flutter",
-    description: "Application mobile de suivi de qualité des rivières avec visualisation de données en temps réel et interface intuitive.",
-    detailedDescription: "Application mobile développée avec Flutter pour le suivi et la visualisation de la qualité des rivières. Interface utilisateur intuitive permettant de consulter les données en temps réel avec des graphiques interactifs.\n\nCaractéristiques principales:\n- Visualisation de données en temps réel\n- Graphiques et statistiques interactifs\n- Interface mobile responsive\n- Consultation hors-ligne des données",
-    image: null,
-    tags: ["Flutter", "Dart", "Mobile", "Data Viz"],
-    videoUrl: "",
+    title: "Dashboard Qualité de l’Eau",
+    description: "Dashboard interactif permettant de visualiser en temps réel la qualité de l’eau des rivières et fleuves en France, à partir des données ouvertes de l’API Hub’Eau. (Projet collaboratif)",
+    detailedDescription: "Ce projet vise à rendre accessible et compréhensible la qualité des eaux de surface en France. Il utilise une interface moderne pour présenter les données de surveillance des rivières : températures, pH, nitrates, ammonium, etc., tout en évaluant un indice global de pollution basé sur l'indice IQEau.\n\nL’objectif est de sensibiliser à l’état des milieux aquatiques et de fournir un outil d’analyse simple à destination du grand public comme des scientifiques. Fonctionnalités principales :\n - Interface graphique moderne développée avec Flutter.\n - Cartographie interactive des stations de mesure avec Mapbox.\n - Affichage en temps réel des paramètres physico-chimiques de l’eau.\n - Calcul et affichage d’un indice de qualité de l’eau (IQEau).\n - Anecdotes informatives \"Le saviez-vous ?\" qui changent toutes les 7 secondes.\n - Connexion directe à l’API Hub’Eau pour obtenir les dernières données disponibles.\n - Graphiques dynamiques des mesures par station.",
+    image: DashboardImg,
+    tags: ["Flutter", "Dart", "API", "Data Visualization"],
+    videoUrl: DashboardVdo,
+    githubLink: "https://github.com/SIFFRINP/flutter_dashboard"
+  },
+  {
+    title: "Apprentissage par transfert pour la classification d’images médicales (Maladie d’Alzheimer)",
+    description: "Projet de classification d’IRM cérébrales à l’aide de réseaux de neurones convolutifs et de techniques de transfert d’apprentissage, visant à détecter les stades de la maladie d’Alzheimer.",
+    detailedDescription: "Ce projet explore l’application du Transfer Learning pour la classification d’images IRM dans le cadre du diagnostic assisté de la maladie d’Alzheimer.\n\nNous avons comparé plusieurs architectures de réseaux de neurones convolutifs (CNN), dont VGG19, MobileNetV2, EfficientNetB0 et DenseNet121, afin d’évaluer leur capacité de généralisation sur un jeu de données d’IRM issu de Kaggle.\n\nL’approche adoptée s’appuie sur des modèles pré-entraînés sur ImageNet, ajustés (fine-tuning) pour distinguer les différents stades de la maladie : Non Demented, Very Mild Demented, Mild Demented et Moderate Demented.\nLe modèle VGG19 a obtenu les meilleurs résultats, avec une accuracy de 84,5 % et un F1-score moyen de 0,84, confirmant son efficacité dans la détection automatisée des signes d’Alzheimer.\n\nUne interface utilisateur (IHM) a été développée avec Flask, HTML et CSS pour permettre le chargement d’images IRM, l’affichage des prédictions et la visualisation de heatmaps Grad-CAM, offrant une interprétation visuelle des zones cérébrales influençant la décision du modèle (notamment au niveau de l’hippocampe).\n\nLe projet met l’accent sur la transparence, la compréhension et la reproductibilité scientifique, tout en reconnaissant les limites actuelles liées à la taille du jeu de données et au risque de surapprentissage.",
+    image: AlzheimerImg,
+    tags: ["IA", "Deep Learning", "Transfer Learning","CNN"],
+    videoUrl: AlzheimerVdo,
     githubLink: "#"
   },
   {
-    title: "What Do You Meme - Mobile",
-    description: "Reproduction du jeu de société populaire en application mobile avec Firebase pour le multijoueur en temps réel.",
-    detailedDescription: "Reproduction mobile du célèbre jeu de société What Do You Meme. Application développée avec Android Studio intégrant Firebase pour permettre une expérience multijoueur en temps réel.\n\nCaractéristiques principales:\n- Multijoueur en temps réel via Firebase\n- Système de rooms et de lobbies\n- Base de données de mèmes\n- Interface utilisateur ludique et intuitive",
-    image: null,
-    tags: ["Android Studio", "Firebase", "Mobile"],
-    videoUrl: "",
-    githubLink: "#"
-  },
-  {
-    title: "Sudoku Java",
-    description: "Reproduction complète du jeu Sudoku avec générateur de grilles, vérification automatique et différents niveaux de difficulté.",
-    detailedDescription: "Application Sudoku complète développée en Java avec une interface graphique intuitive. Le jeu propose un générateur de grilles algorithmique, un système de vérification automatique, et plusieurs niveaux de difficulté.\n\nCaractéristiques principales:\n- Générateur de grilles avec algorithme de backtracking\n- Vérification automatique des solutions\n- Système d'indices intelligents\n- Niveaux de difficulté variables (facile, moyen, difficile)\n- Sauvegarde et chargement de parties",
-    image: null,
-    tags: ["Java", "Algorithmes", "UI/UX"],
+    title: "Jeu Unity - In progress",
+    description: "Jeu 3D complet en cours de développement avec Unity, explorant des mécaniques de gameplay innovantes",
+    detailedDescription:"",
+    image: ChefImg,
+    tags: ["Game Development", "3D"],
     videoUrl: "",
     githubLink: "#"
   }
