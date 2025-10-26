@@ -4,38 +4,64 @@ import { Badge } from "@/components/ui/badge";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious, CarouselApi } from "@/components/ui/carousel";
 import { useEffect, useState } from "react";
 import Autoplay from "embla-carousel-autoplay";
-import platformerImg from "@/assets/project-platformer.jpg";
-import shooterImg from "@/assets/project-shooter.jpg";
+import Img2048 from "@/assets/2048_Start.png";
+import Vdo2048 from "@/assets/2048_movement.mp4";
+import FlappyBirdImg from "@/assets/Flappy_Bird.png";
+import FlappyBirdVdo from "@/assets/flappy_bird_movement.mp4";
+import DinnerImg from "@/assets/Dinner.png";
+import DinnerVdo from "@/assets/Dinner.mp4";
+import SkillsUpImg from "@/assets/SkillsUp.png";
+import SkillsUpVdo from "@/assets/SkillsUp2.mp4";
+
+
+
+
 import ProjectDialog from "./ProjectDialog";
 
 const projects = [
   {
-    title: "Jeu de Plateforme Unity",
-    description: "Jeu de plateforme 3D développé avec Unity, incluant système de collecte de pièces, power-ups, et mécaniques de saut avancées.",
-    detailedDescription: "Ce jeu de plateforme 3D a été entièrement développé avec Unity et C#. Il comprend un système de collecte de pièces interactif, plusieurs types de power-ups qui améliorent les capacités du joueur, et des mécaniques de saut avancées permettant une navigation fluide dans des environnements complexes. Le projet met l'accent sur le game feel et l'expérience utilisateur.\n\nCaractéristiques principales:\n- Système de physique personnalisé pour des contrôles précis\n- Collectibles et power-ups avec effets visuels\n- Plusieurs niveaux avec difficulté progressive\n- Interface utilisateur intuitive",
-    image: platformerImg,
-    tags: ["Unity", "C#", "3D", "Game Design"],
-    videoUrl: "",
+    title: "Flappy Bird Unity",
+    description: "Recréation du jeu Flappy Bird pour comprendre la gestion de la physique, des collisions et du scoring dans Unity",
+    detailedDescription: "Ce projet est une reproduction du jeu Flappy Bird développée avec Unity. \n L’objectif était de comprendre les bases du développement d’un jeu 2D :\n - gestion de la physique et des collisions,\n - mouvement du joueur via la gravité et les impulsions,\n - génération procédurale d’obstacles,\n - système de score et de redémarrage.\n\nCe projet m’a permis d’explorer les composants clés de Unity (Rigidbody2D, Collider2D, UI, Prefabs) et de me familiariser avec la logique de boucle de jeu, la gestion des états et la fluidité du gameplay.",
+    image: FlappyBirdImg,
+    tags: ["Unity", "C#", "2D", "Physics", 'Collisions'],
+    videoUrl: FlappyBirdVdo,
     githubLink: "#"
   },
   {
-    title: "Jeu de Tir Unity",
-    description: "Shooter futuriste avec système de tir, ennemis IA, et environnement sci-fi immersif. Effets visuels et audio professionnels.",
-    detailedDescription: "Shooter futuriste développé avec Unity, proposant une expérience de jeu immersive dans un environnement sci-fi. Le jeu intègre un système de tir sophistiqué, une intelligence artificielle pour les ennemis avec différents comportements, et des effets visuels et sonores de qualité professionnelle.\n\nCaractéristiques principales:\n- Système de combat dynamique avec plusieurs armes\n- IA ennemie avec comportements variés\n- Effets visuels (VFX) et particules avancés\n- Environnement 3D détaillé et optimisé",
-    image: shooterImg,
-    tags: ["Unity", "C#", "AI", "VFX"],
-    videoUrl: "",
+    title: "2048 Unity",
+    description: "Recréation du jeu 2048 pour apprendre la gestion des grilles, des mouvements et des interfaces utilisateur dans Unity",
+    detailedDescription: "Ce projet est une reproduction du jeu 2048, développé avec Unity.\nL’objectif était de comprendre la logique de jeu basée sur une grille et la gestion des entrées utilisateur. Les principales fonctionnalités implémentées incluent :\n - fusion et déplacement des tuiles selon les directions,\n - mise à jour dynamique du score et du meilleur score,\n - affichage de l’écran de fin de partie (Game Over),\n - bouton pour lancer une nouvelle partie,\n - interface utilisateur intégrée avec le système UI de Unity.\nCe projet m’a permis de renforcer mes compétences en logique algorithmique, en gestion d’état de jeu et en conception d’interfaces interactives dans Unity.",
+    image: Img2048,
+    tags: ["Unity", "C#", "2D", "UI", "Grid", "Score system"],
+    videoUrl: Vdo2048,
+    githubLink: "#"
+  },
+  {
+    title: "Game Diner",
+    description: "Petit jeu de lancer de légumes réalisé sous Unity pour explorer la physique, les collisions, les particules et la gestion du score.",
+    detailedDescription: "Ce projet a été développé dans le cadre d’un TP Unity. Le but du jeu est de lancer des légumes (brocolis, carottes) dans des tasses pour marquer des points.\n\n" +
+"Il a permis de mettre en pratique plusieurs notions fondamentales du développement de jeux 3D :\n" +
+"- instanciation d’objets physiques et gestion des forces de lancer,\n" +
+"- utilisation des colliders, rigidbodies et triggers,\n" +
+"- création d’effets visuels via des systèmes de particules,\n" +
+"- gestion et sauvegarde du score à l’aide des PlayerPrefs,\n" +
+"- utilisation de coroutines et AnimationCurves pour les animations,\n" +
+"- interaction entre plusieurs scripts (VegetableThrower, Goal, GameManager, BounceVegetable).\n\n" +
+"Ce projet m’a permis de mieux comprendre la gestion de la physique dans Unity, la logique d’événements de collision et la coordination entre différents composants pour créer un gameplay complet et interactif.",
+    image: DinnerImg,
+    tags: ["Unity", "C#", "3D", "Particles", "Coroutines", "Collisions"],
+    videoUrl: DinnerVdo,
     githubLink: "#"
   },
   {
     title: "Plateforme E-learning",
     description: "Développement complet d'une plateforme e-learning modulaire avec React, Next.js, TypeScript et Supabase, incluant base de données sécurisée.",
-    detailedDescription: "Plateforme e-learning complète développée seule lors d'un stage chez Pixelisium. Architecture modulaire utilisant les technologies web modernes pour offrir une expérience d'apprentissage en ligne optimale.\n\nCaractéristiques principales:\n- Architecture full-stack avec React et Next.js\n- Base de données Supabase avec sécurité RLS\n- Système d'authentification et gestion des utilisateurs\n- Interface responsive et accessible\n- Gestion de contenu dynamique",
-    image: null,
+    detailedDescription: "Plateforme e-learning complète développée seule lors d'un stage chez Pixelisium. Architecture modulaire utilisant les technologies web modernes pour offrir une expérience d'apprentissage en ligne optimale et une personalisation complète pour les professeurs.\n\nCaractéristiques principales:\n- Architecture full-stack avec React et Next.js\n- Base de données Supabase avec sécurité RLS\n- Système d'authentification et gestion des utilisateurs\n- Interface responsive et accessible\n- Gestion de contenu dynamique \n\n En plus de la partie enseignement, j'ai rajouté également la possibilité de créér et assister à des events, de créer liker et comenter des posts, de faire des quizs ainsi que de mettre en place un système de gamification avec des points et des badges.",
+    image: SkillsUpImg,
     tags: ["React", "Next.js", "TypeScript", "Supabase"],
-    videoUrl: "",
+    videoUrl: SkillsUpVdo,
     githubLink: "#",
-    highlight: true
   },
   {
     title: "Dashboard Flutter",
