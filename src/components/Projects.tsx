@@ -17,8 +17,8 @@ import DashboardVdo from "@/assets/dashboard.gif";
 import AlzheimerImg from "@/assets/alzheimer.png";
 import AlzheimerVdo from "@/assets/alzheimer.mp4";
 import ChefImg from "@/assets/MiniChef.png";
-
-
+import FairyImg from "@/assets/FairyLand.png";
+import FairyVdo from "@/assets/FairyLand.mp4";
 import ProjectDialog from "./ProjectDialog";
 
 interface Project {
@@ -49,6 +49,15 @@ const projects: Project[] = [
     image: Img2048,
     tags: ["Unity", "C#", "2D", "UI", "Grid", "Score system"],
     videoUrl: Vdo2048,
+    githubLink: "#"
+  },
+  {
+    title: "FairyLand - Combat et Exploration 2D - Unity",
+    description: "Un jeu 2D où le joueur peut se déplacer et attaquer à l’épée, tandis que des ennemis poursuivent automatiquement le joueur et infligent des dégâts au contact.",
+    detailedDescription:"Ce projet consiste en un jeu 2D en C# sous Unity. Le joueur peut se déplacer dans toutes les directions avec des collisions, et attaquer avec une épée grâce à un système de triggers et offsets pour gérer la direction de l’attaque. Les ennemis se déplacent automatiquement vers le joueur toutes les secondes et infligent des dégâts lorsqu’ils sont à portée. Le système d’animation est géré via Animator pour le joueur et les ennemis, avec des animations adaptées à la direction du déplacement et aux attaques. Le projet inclut également un mécanisme d’invincibilité temporaire pour le joueur après avoir été touché.",
+    image: FairyImg,
+    tags: ["Unity", "C#", "2D", "Jeu d’action", "Animator", "Système de santé"],
+    videoUrl: FairyVdo,
     githubLink: "#"
   },
   {
