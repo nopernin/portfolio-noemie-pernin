@@ -30,6 +30,7 @@ interface Project {
   videoUrl: string;
   githubLink: string;
   highlight?: boolean;
+  playLink?: string;
 }
 
 const projects: Project[] = [
@@ -40,7 +41,9 @@ const projects: Project[] = [
     image: FlappyBirdImg,
     tags: ["Unity", "C#", "2D", "Physics", 'Collisions'],
     videoUrl: FlappyBirdVdo,
-    githubLink: "#"
+    githubLink: "https://github.com/nopernin/flappy_bird",
+    playLink: "https://nopernin.itch.io/flappy-bird"
+    
   },
   {
     title: "2048 Unity",
@@ -49,7 +52,8 @@ const projects: Project[] = [
     image: Img2048,
     tags: ["Unity", "C#", "2D", "UI", "Grid", "Score system"],
     videoUrl: Vdo2048,
-    githubLink: "#"
+    githubLink: "https://github.com/nopernin/2048",
+    playLink: "https://nopernin.itch.io/2048"
   },
   {
     title: "FairyLand - Combat et Exploration 2D - Unity",
@@ -58,7 +62,8 @@ const projects: Project[] = [
     image: FairyImg,
     tags: ["Unity", "C#", "2D", "Jeu d’action", "Animator", "Système de santé"],
     videoUrl: FairyVdo,
-    githubLink: "#"
+    githubLink: "https://github.com/nopernin/Fairy_Land",
+    playLink: "https://nopernin.itch.io/fairyland"
   },
   {
     title: "Game Diner",
@@ -75,7 +80,8 @@ const projects: Project[] = [
     image: DinnerImg,
     tags: ["Unity", "C#", "3D", "Particles", "Coroutines", "Collisions"],
     videoUrl: DinnerVdo,
-    githubLink: "#"
+    githubLink: "https://github.com/nopernin/Dinner",
+    playLink: "https://nopernin.itch.io/diner-en-folie"
   },
   {
     title: "Plateforme E-learning",

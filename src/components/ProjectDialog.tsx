@@ -1,7 +1,7 @@
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Github } from "lucide-react";
+import { Github, Play } from "lucide-react";
 
 interface Project {
   title: string;
@@ -11,6 +11,7 @@ interface Project {
   tags: string[];
   videoUrl?: string;
   githubLink: string;
+  playLink?: string;
   highlight?: boolean;
 }
 
@@ -82,20 +83,37 @@ const ProjectDialog = ({ project, open, onOpenChange }: ProjectDialogProps) => {
             ))}
           </div>
 
-          {/* GitHub Button */}
-          <div className="flex justify-center pt-4">
-            <Button 
-              variant="default" 
-              size="lg"
-              className="bg-gradient-primary hover:shadow-primary transition-all hover:scale-105 w-full sm:w-auto"
-              asChild
-            >
-              <a href={project.githubLink} target="_blank" rel="noopener noreferrer">
-                <Github className="h-5 w-5 mr-2" />
-                Voir sur GitHub
-              </a>
-            </Button>
-          </div>
+          {/* --- Boutons d'action --- */}
+<div className="flex flex-wrap justify-center gap-4 pt-4">
+
+  {/* Bouton pour Jouer (Nouveau) */}
+  {project.playLink && (
+    <Button 
+      variant="default"
+      size="lg"
+      className="bg-green-600 hover:bg-green-700 text-white shadow-lg hover:shadow-green-600/40 transition-all hover:scale-105 w-full sm:w-auto"
+      asChild
+    >
+      <a href={project.playLink} target="_blank" rel="noopener noreferrer">
+        <Play className="h-5 w-5 mr-2" />
+        Jouer au jeu
+      </a>
+    </Button>
+  )}
+
+  {/* Bouton GitHub (Existant) */}
+  <Button 
+    variant="default" 
+    size="lg"
+    className="bg-gradient-primary hover:shadow-primary transition-all hover:scale-105 w-full sm:w-auto"
+    asChild
+  >
+    <a href={project.githubLink} target="_blank" rel="noopener noreferrer">
+      <Github className="h-5 w-5 mr-2" />
+      Voir sur GitHub
+    </a>
+  </Button>
+</div>
         </div>
       </DialogContent>
     </Dialog>
