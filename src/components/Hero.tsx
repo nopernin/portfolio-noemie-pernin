@@ -80,12 +80,12 @@ const Hero = () => {
             
             <div className="flex gap-3">
               <Button size="icon" variant="outline" className="hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:scale-110" asChild>
-                <a href="https://github.com" target="_blank" rel="noopener noreferrer">
+                <a href="https://github.com/nopernin" target="_blank" rel="noopener noreferrer">
                   <Github className="h-5 w-5" />
                 </a>
               </Button>
               <Button size="icon" variant="outline" className="hover:bg-secondary hover:text-secondary-foreground transition-all duration-300 hover:scale-110" asChild>
-                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+                <a href="https://www.linkedin.com/in/noémie-pernin-a96408222" target="_blank" rel="noopener noreferrer">
                   <Linkedin className="h-5 w-5" />
                 </a>
               </Button>
